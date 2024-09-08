@@ -2,6 +2,7 @@
     <div class="converter-container">
         <h1>Currency Convertor</h1>
         <div class="converter">
+            <!-- Блок для першої валюти -->
             <div class="currency-block">
                 <select [(ngModel)]="fromCurrency" (change)="convert()">
                     <option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
@@ -9,6 +10,7 @@
                 <input type="number" [(ngModel)]="amount" (input)="convert()" placeholder="Enter amount" />
             </div>
 
+            <!-- Блок для другої валюти -->
             <div class="currency-block">
                 <select [(ngModel)]="toCurrency" (change)="convert()">
                     <option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
