@@ -1,0 +1,15 @@
+<div class="converter-container">
+    <h1>Currency Convertor</h1>
+    <div class="converter">
+        <select [(ngModel)]="fromCurrency" (change)="convert()">
+            <option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
+        </select>
+        <select [(ngModel)]="toCurrency" (change)="convert()">
+            <option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
+        </select>
+        <input type="number" [(ngModel)]="amount" (input)="convert()" placeholder="Enter amount" />
+        <input type="text" [value]="result | number:'1.2-2'" readonly />
+    </div>
+    <button (click)="convert()">Convert</button>
+</div>
+
